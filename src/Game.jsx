@@ -5,7 +5,7 @@ function GameCell(number) {
   return <div key={number} className={number===0 ? "cell empty " :"cell "}><span>{number}</span></div>;
 }
 
-
+//winning order
 const winPos = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,0];
 
 
@@ -14,7 +14,6 @@ export default class Game extends Component {
   super(props);
   this.state={
     cells: winPos,
-    isSolved: false,
   }
 
   }
@@ -53,7 +52,6 @@ export default class Game extends Component {
             {
                 newArr[prevState.cells.indexOf(0)]=prevState.cells[prevState.cells.indexOf(0)+4];
                 newArr[prevState.cells.indexOf(0)+4]=0;
-                return {cells: newArr}
 
             }
               break;
@@ -64,7 +62,6 @@ export default class Game extends Component {
 
                 newArr[prevState.cells.indexOf(0)]=prevState.cells[prevState.cells.indexOf(0)-4];
                 newArr[prevState.cells.indexOf(0)-4]=0;
-
 
             }
               break;
